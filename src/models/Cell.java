@@ -46,5 +46,11 @@ public class Cell {
         this.cellState = cellState;
     }
 
-
+    public void display() {
+        if(this.cellState == CellState.EMPTY) {
+            System.out.println("|   |");
+        } else {
+            System.out.println("| " + this.getPlayer().getSymbol().getSymbolName() + "  |");
+        }
+    }
 }

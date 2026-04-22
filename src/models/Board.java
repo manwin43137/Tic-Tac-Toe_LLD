@@ -33,4 +33,12 @@ public class Board {
     public void setSize(int size) {
         this.size = size;
     }
+
+    public void display() {
+        for(int i = 0; i < size; i++) {
+            for(int j = 0; j < size; j++) {
+                this.getCells().get(i).get(j).display();
+            }
+        }
+    }
 }

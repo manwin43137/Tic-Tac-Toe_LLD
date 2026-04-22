@@ -8,4 +8,8 @@ public class GameController {
         //TODO
         return null;
     }
+
+    public void display(Game game) {
+        game.getBoard().display();
+    }
 }

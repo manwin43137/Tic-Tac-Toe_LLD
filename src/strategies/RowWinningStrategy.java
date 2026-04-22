@@ -1,7 +1,6 @@
 package strategies;
 
 import models.Move;
-import models.Player;
 
 import java.util.HashMap;
 

@@ -39,6 +39,7 @@ public class Board {
             for(int j = 0; j < size; j++) {
                 this.getCells().get(i).get(j).display();
             }
+            System.out.println();
         }
     }
 }

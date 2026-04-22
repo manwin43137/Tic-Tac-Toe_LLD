@@ -48,9 +48,9 @@ public class Cell {
 
     public void display() {
         if(this.cellState == CellState.EMPTY) {
-            System.out.println("|   |");
+            System.out.print("|   |");
         } else {
-            System.out.println("| " + this.getPlayer().getSymbol().getSymbolName() + "  |");
+            System.out.print("| " + this.getPlayer().getSymbol().getSymbolName() + "  |");
         }
     }
 }

@@ -1,7 +1,9 @@
 package controller;
 
 import models.Game;
+import models.Move;
 import models.Player;
+import models.enums.GameState;
 import strategies.WinningStrategy;
 
 import java.util.List;
@@ -17,5 +19,24 @@ public class GameController {
         game.getBoard().display();
     }
 
-    public void makeMove(Game game) {}
+    public Move makeMove(Game game, int row, int column) {
+        Move move = game.getBoard().makeMove(game.getCurrentPlayer(), row, column);
+        game.setNextPlayerMove(game.getNextPlayerMove() + 1);
+        return move;
+    }
+
+    public void addMove(Game game, Move move) {
+        game.addMove(move);
+    }
+
+    public boolean checkWinner(Game game, Move move) {
+        for(WinningStrategy strategy : game.getWinningStrategies()) {
+            if(strategy.checkWinner(move)) return true;
+        }
+        return false;
+    }
+
+    public void setGameState(Game game) {
+        game.setGameState(GameState.FINISHED);
+    }
 }

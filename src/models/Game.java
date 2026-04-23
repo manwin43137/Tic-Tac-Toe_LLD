@@ -55,6 +55,14 @@ public class Game {
         this.moves = moves;
     }
 
+    public List<WinningStrategy> getWinningStrategies() {
+        return winningStrategies;
+    }
+
+    public void setWinningStrategies(List<WinningStrategy> winningStrategies) {
+        this.winningStrategies = winningStrategies;
+    }
+
     public int getNextPlayerMove() {
         return nextPlayerMove;
     }
@@ -69,5 +77,13 @@ public class Game {
 
     public void setWinner(Player winner) {
         this.winner = winner;
+    }
+
+    public Player getCurrentPlayer() {
+        return players.get(nextPlayerMove % players.size());
+    }
+
+    public void addMove(Move move) {
+        moves.add(move);
     }
 }

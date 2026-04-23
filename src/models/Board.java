@@ -1,5 +1,7 @@
 package models;
 
+import models.enums.CellState;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -42,4 +44,13 @@ public class Board {
             System.out.println();
         }
     }
+
+    public Move makeMove(Player player, int row, int column) {
+        Cell currentCell = this.getCells().get(row).get(column);
+        currentCell.setPlayer(player);
+        currentCell.setCellState(CellState.FILLED);
+        return new Move(player, currentCell);
+    }
+
+
 }

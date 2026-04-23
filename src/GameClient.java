@@ -32,5 +32,11 @@ public class GameClient {
         while(game.getGameState() == GameState.IN_PROGRESS) {
             gameController.makeMove(game);
         }
+
+        if(game.getGameState() == GameState.FINISHED) {
+            System.out.println(game.getWinner() + " wins");
+        } else {
+            System.out.println("Game is drawn");
+        }
     }
 }

@@ -22,12 +22,16 @@ public class DiagonalWinningStrategy implements WinningStrategy {
         int row = move.getCell().getRow();
         int col = move.getCell().getCol();
 
+        if((row != col) && ((row + col) != size - 1) ) return false;
+
         if(row == col) {
             mainDiagonal.put(symbolName, mainDiagonal.getOrDefault(symbolName, 0) + 1);
+            antiDiagonal.put(symbolName, antiDiagonal.getOrDefault(symbolName, 0));
         }
 
         if(row + col == size - 1) {
             antiDiagonal.put(symbolName, antiDiagonal.getOrDefault(symbolName, 0) + 1);
+            mainDiagonal.put(symbolName, mainDiagonal.getOrDefault(symbolName, 0));
         }
 
         boolean wonOnMain = mainDiagonal.get(symbolName) == size;

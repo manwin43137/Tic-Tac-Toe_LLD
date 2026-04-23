@@ -23,7 +23,7 @@ public class GameClient {
         List<WinningStrategy> winningStrategies = new ArrayList<>();
         winningStrategies.add(new RowWinningStrategy(size));
         winningStrategies.add(new ColumnWinningStrategy(size));
-        //winningStrategies.add(new DiagonalWinningStrategy(size));
+        winningStrategies.add(new DiagonalWinningStrategy(size));
 
         Game game = gameController.startGame(size, players, winningStrategies);
         gameController.display(game);

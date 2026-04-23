@@ -30,7 +30,7 @@ public class GameClient {
         gameController.display(game);
 
         while(game.getGameState() == GameState.IN_PROGRESS) {
-            gameController.makeMove(Game);
+            gameController.makeMove(game);
         }
     }
 }

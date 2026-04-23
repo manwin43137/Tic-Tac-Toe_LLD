@@ -39,4 +39,8 @@ public class GameController {
     public void setGameState(Game game) {
         game.setGameState(GameState.FINISHED);
     }
+
+    public void setWinner(Game game) {
+        game.setCurrentWinner();
+    }
 }

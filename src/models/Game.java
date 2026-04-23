@@ -86,4 +86,9 @@ public class Game {
     public void addMove(Move move) {
         moves.add(move);
     }
+
+    public void setCurrentWinner() {
+        Player winner = this.players.get((nextPlayerMove - 1) % players.size());
+        this.setWinner(winner);
+    }
 }

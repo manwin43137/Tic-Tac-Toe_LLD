@@ -48,7 +48,14 @@ public class GameClient {
             gameController.display(game);
             if(gameController.checkWinner(game, move)) {
                 gameController.setGameState(game);
+                gameController.setWinner(game);
             }
+        }
+
+        if(game.getGameState() == GameState.FINISHED) {
+            System.out.println(game.getWinner().getName() + " wins!");
+        } else {
+            System.out.println("Game is drawn");
         }
     }
 }
